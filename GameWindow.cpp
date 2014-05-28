@@ -93,6 +93,8 @@ void GameWindow::checkCollizion() {
         fruit->setXPosition((rand() % WINDOW_WIDTH)/scale);
         fruit->setYPosition((rand() % WINDOW_HEIGHT)/scale);
         fruitCounter++;
+        score++;
+        printf("Your current score is %d", score);
     }
     if(snake->snakePositionX() == dung->getXPosition() && snake->snakePositionY() == dung->getYPosition()){
         snake->shrinkSnake();
@@ -101,6 +103,7 @@ void GameWindow::checkCollizion() {
         }
         dung->setXPosition((rand() % WINDOW_WIDTH)/scale);
         dung->setYPosition((rand() % WINDOW_HEIGHT)/scale);
+        score++;
     }
     if(snake->snakePositionX() >= WINDOW_WIDTH / scale || snake->snakePositionY() >= WINDOW_HEIGHT / scale){
         snakeHasDied();

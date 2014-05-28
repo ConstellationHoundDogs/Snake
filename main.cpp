@@ -7,15 +7,15 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
-    GameWindow* gameWindow = new GameWindow();
-    Snake* snake = new Snake();
-    Fruit* fruit = new Fruit(5, 5);
-    Dung * dung = new Dung(10, 10);
+    GameWindow gameWindow;
+    Snake* snake = new Snake();            //create player snake
+    Fruit* fruit = new Fruit(5, 5);         // create initial fruit
+    Dung * dung = new Dung(10, 10);             // create initial dung
     
-    gameWindow->setSnake(snake);
-    gameWindow->setFruit(fruit);
-    gameWindow->setDung(dung);
-    SnakeGame* snakeGame = new SnakeGame(gameWindow);
+    gameWindow.setSnake(snake);         //adding snake to the field etc.
+    gameWindow.setFruit(fruit);
+    gameWindow.setDung(dung);
+    SnakeGame* snakeGame = new SnakeGame(&gameWindow);
 
     snakeGame->startGame();
     

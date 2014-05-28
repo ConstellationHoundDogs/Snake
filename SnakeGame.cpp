@@ -7,7 +7,7 @@ SnakeGame::SnakeGame(GameWindow* window) {
     myMainWindow = window;
 }
 
-void SnakeGame::startGame() {
+void SnakeGame::startGame() {  //main loop of the game
     double last = glfwGetTime();
     double delta = 1.0 / 60;
     double now =  glfwGetTime();

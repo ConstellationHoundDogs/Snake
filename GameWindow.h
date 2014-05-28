@@ -50,6 +50,7 @@ private:
     void drawField();
     
     int fruitCounter = 0;
+    int score = 0;
     
 };
 

@@ -5,7 +5,7 @@
 
 int scale = 640 / 480 * 20; 
 
-Snake::Snake() {
+Snake::Snake() {       //initialization of initial snake segments
     segments[3].x = 5;
     segments[3].y = 5;
     segments[2].x = 6;
@@ -17,7 +17,7 @@ Snake::Snake() {
     size = 4;
 }
 
-void Snake::draw(){
+void Snake::draw(){  
     glColor3f(1.0f, 0.0f, 0.0f);
     glBegin(GL_QUADS);
     for(int i = 0; i < size; i++){
@@ -29,7 +29,7 @@ void Snake::draw(){
     glEnd();
 }
 
-void Snake::extendSnake() {
+void Snake::extendSnake() { // enlarge snake by one segment
     size++;
 }
 
@@ -37,7 +37,7 @@ void Snake::shrinkSnake() {
     size--;
 }
 
-bool Snake::checkSelfCollizion() {
+bool Snake::checkSelfCollizion() { // check for collizion
     for(int i = 1; i < size; i++){
         if( (segments[0].x == segments[i].x) && (segments[0].y == segments[i].y)){
             return true;
@@ -47,7 +47,7 @@ bool Snake::checkSelfCollizion() {
 }
 
 
-void Snake::move() {
+void Snake::move() {   // moving method
 
     for(int i = size; i > 0; i--){
         segments[i].x = segments[i - 1].x;
